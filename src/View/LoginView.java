@@ -20,13 +20,14 @@ public class LoginView extends javax.swing.JFrame {
      */
     public LoginView() {
         initComponents();
-        setTitle("Calendar Academy");
+        /*setTitle("Calendar Academy");
         
         //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         //setSize(455, 505);
         setResizable(false);
         setLocationRelativeTo(null);
         setVisible(true);
+        */
          
     }
 
@@ -48,11 +49,11 @@ public class LoginView extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         txt_username = new javax.swing.JTextField();
         txt_password = new javax.swing.JPasswordField();
-        jCheckBox1 = new javax.swing.JCheckBox();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btn_login = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        btn_registrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setIconImage(getIconImage());
@@ -71,13 +72,6 @@ public class LoginView extends javax.swing.JFrame {
         txt_password.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         jPanel1.add(txt_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 360, 290, 50));
 
-        jCheckBox1.setBackground(new java.awt.Color(255, 255, 255));
-        jCheckBox1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jCheckBox1.setForeground(new java.awt.Color(255, 255, 255));
-        jCheckBox1.setText("Remember me");
-        jCheckBox1.setOpaque(false);
-        jPanel1.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 430, 130, 40));
-
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/user.png"))); // NOI18N
@@ -90,13 +84,13 @@ public class LoginView extends javax.swing.JFrame {
         jLabel2.setOpaque(true);
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 360, 50, 50));
 
-        jButton1.setBackground(new java.awt.Color(51, 102, 255));
-        jButton1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("LOGIN");
-        jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 490, 120, 40));
+        btn_login.setBackground(new java.awt.Color(51, 102, 255));
+        btn_login.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        btn_login.setForeground(new java.awt.Color(255, 255, 255));
+        btn_login.setText("LOGIN");
+        btn_login.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btn_login.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel1.add(btn_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 470, 120, 40));
 
         jLabel3.setBackground(new java.awt.Color(153, 153, 153));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -104,6 +98,14 @@ public class LoginView extends javax.swing.JFrame {
         jLabel3.setToolTipText("");
         jLabel3.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, -20, 310, 310));
+
+        btn_registrar.setBackground(new java.awt.Color(51, 102, 255));
+        btn_registrar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        btn_registrar.setForeground(new java.awt.Color(255, 255, 255));
+        btn_registrar.setText("REGISTER");
+        btn_registrar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btn_registrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel1.add(btn_registrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 530, 120, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -157,13 +159,13 @@ public class LoginView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JCheckBox jCheckBox1;
+    public static javax.swing.JButton btn_login;
+    public static javax.swing.JButton btn_registrar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField txt_password;
-    private javax.swing.JTextField txt_username;
+    public static javax.swing.JPasswordField txt_password;
+    public static javax.swing.JTextField txt_username;
     // End of variables declaration//GEN-END:variables
 }
