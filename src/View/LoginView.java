@@ -14,12 +14,18 @@ import javax.swing.JFrame;
  * @author GARBARINO
  */
 public class LoginView extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form LoginView
      */
     public LoginView() {
         initComponents();
+        setTitle("Calendar Academy");
+        pack();
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setResizable(false);
+        setLocationRelativeTo(null);
+        setVisible(true);
         /*setTitle("Calendar Academy");
         
         //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
