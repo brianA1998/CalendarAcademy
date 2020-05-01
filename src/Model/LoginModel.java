@@ -28,7 +28,8 @@ public class LoginModel {
     }
 
     /**
-     * Este metodo permite registrar usuarios a la base de datos
+     * Este metodo permite registrar usuarios a la base de datos y limpiar los
+     * campos una vez que se guardaron los datos en la bd
      */
     public void RegistrarUsuarios() {
         //Realizando un Query a la base de datos
@@ -43,23 +44,46 @@ public class LoginModel {
                 ppt.setString(2, v.txt_password.getText());
                 ppt.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Insercion exitosa");
-                //LimpiarCampos();
+                v.txt_username.setText("");
+                v.txt_password.setText("");
+
             }
         } catch (SQLException ex) {
             System.out.println(ex);
             JOptionPane.showMessageDialog(null, "Insercion fallida");
-            //LimpiarCampos();
+
         }
     }
 
     /**
-     * Este metodo nos permite limpiar todos los campos despues/antes de una
-     * accion o evento
+     * Este metodo permite validar si el usuario existe en la base de datos o no
      */
-    public void LimpiarCampos() {
-        v.txt_username.setText("");
-        v.txt_password.setText("");
+    public void ValidarLogin() {
+        int resultado = 0;
+        try {
+            String usuario = v.txt_username.getText();
+            String pass = v.txt_password.getText();
 
+            //Query
+            String sql = "SELECT * FROM usuarios where user ='" + usuario + "' and password='" + pass + "'";
+            Statement st = cc.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            if (rs.next()) {
+                resultado = 1;
+                if (resultado == 1) {
+                    JOptionPane.showMessageDialog(null, "Bienvenido al Sistema " + usuario);
+                    v.txt_username.setText("");
+                    v.txt_password.setText("");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Usted no esta cargado en el sistema,registrese");
+                    v.txt_username.setText("");
+                    v.txt_password.setText("");
+                }
+            }
+        } catch (Exception ex) {
+            System.err.print(ex);
+            JOptionPane.showMessageDialog(null, "No se puede ingresar al sistema");
+        }
     }
 
 }

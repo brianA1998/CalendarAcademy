@@ -96,7 +96,7 @@ public class LoginView extends javax.swing.JFrame {
         btn_login.setText("LOGIN");
         btn_login.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn_login.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(btn_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 470, 120, 40));
+        jPanel1.add(btn_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 430, 340, 40));
 
         jLabel3.setBackground(new java.awt.Color(153, 153, 153));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -111,7 +111,7 @@ public class LoginView extends javax.swing.JFrame {
         btn_registrar.setText("REGISTER");
         btn_registrar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn_registrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(btn_registrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 530, 120, 40));
+        jPanel1.add(btn_registrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 480, 340, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
