@@ -25,15 +25,8 @@ public class LoginView extends javax.swing.JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
         setLocationRelativeTo(null);
-        setVisible(true);
-        /*setTitle("Calendar Academy");
         
-        //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        //setSize(455, 505);
-        setResizable(false);
-        setLocationRelativeTo(null);
-        setVisible(true);
-        */
+     
          
     }
 
@@ -60,6 +53,7 @@ public class LoginView extends javax.swing.JFrame {
         btn_login = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         btn_registrar = new javax.swing.JButton();
+        Titulo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setIconImage(getIconImage());
@@ -70,25 +64,25 @@ public class LoginView extends javax.swing.JFrame {
         txt_username.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         txt_username.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         txt_username.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, new java.awt.Color(204, 204, 204), null, null));
-        jPanel1.add(txt_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 290, 290, 50));
+        jPanel1.add(txt_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 360, 420, 50));
 
         txt_password.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         txt_password.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         txt_password.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, new java.awt.Color(204, 204, 204), null, null));
         txt_password.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jPanel1.add(txt_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 360, 290, 50));
+        jPanel1.add(txt_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 430, 420, 50));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/user.png"))); // NOI18N
         jLabel1.setOpaque(true);
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, 50, 50));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 50, 50));
 
         jLabel2.setBackground(new java.awt.Color(185, 54, 47));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/password (1).png"))); // NOI18N
         jLabel2.setOpaque(true);
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 360, 50, 50));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, 50, 50));
 
         btn_login.setBackground(new java.awt.Color(51, 102, 255));
         btn_login.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -96,14 +90,14 @@ public class LoginView extends javax.swing.JFrame {
         btn_login.setText("LOGIN");
         btn_login.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn_login.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(btn_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 430, 340, 40));
+        jPanel1.add(btn_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 500, 470, 40));
 
         jLabel3.setBackground(new java.awt.Color(153, 153, 153));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/circle-cropped.png"))); // NOI18N
         jLabel3.setToolTipText("");
         jLabel3.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, -20, 310, 310));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, 310, 310));
 
         btn_registrar.setBackground(new java.awt.Color(51, 102, 255));
         btn_registrar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -111,19 +105,23 @@ public class LoginView extends javax.swing.JFrame {
         btn_registrar.setText("REGISTER");
         btn_registrar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn_registrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(btn_registrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 480, 340, 40));
+        jPanel1.add(btn_registrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 550, 470, 40));
+
+        Titulo.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 36)); // NOI18N
+        Titulo.setForeground(new java.awt.Color(255, 255, 255));
+        Titulo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Titulo.setText("     CALENDAR ACADEMY");
+        jPanel1.add(Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 510, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 524, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 1, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 534, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 588, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 654, Short.MAX_VALUE)
         );
 
         pack();
@@ -165,6 +163,7 @@ public class LoginView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Titulo;
     public static javax.swing.JButton btn_login;
     public static javax.swing.JButton btn_registrar;
     private javax.swing.JLabel jLabel1;

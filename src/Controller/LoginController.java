@@ -30,11 +30,8 @@ public class LoginController implements ActionListener {
      * Este metodo permite mostrar la interfazAc Login
      */
     public void Iniciar() {
-        v.setTitle("Calendar Academy");
-        v.pack();
-        v.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        v.setResizable(false);
-        v.setLocationRelativeTo(null);
+        
+       
         v.setVisible(true);
 
     }

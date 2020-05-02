@@ -16,6 +16,7 @@ public class Principal {
             JOptionPane.showMessageDialog(null, e);
 
         }
+
         LoginModel m = new LoginModel();
         LoginView v = new LoginView();
         LoginController c = new LoginController(m, v);
