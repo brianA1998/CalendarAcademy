@@ -5,10 +5,25 @@
  */
 package Controller;
 
-/**
- *
- * @author GARBARINO
- */
+import Model.MenuModel;
+import View.MenuView;
+
 public class MenuController {
-    
+
+    private MenuView mv;
+    private MenuModel mm;
+
+    public MenuController(MenuView mv, MenuModel mm) {
+        this.mm = mm;
+        this.mv = mv;
+    }
+
+    /**
+     * Este metodo permite mostrar la interfazAc Menu
+     */
+    public void Iniciar() {
+
+        mv.setVisible(true);
+
+    }
 }

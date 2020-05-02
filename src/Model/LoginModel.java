@@ -1,6 +1,9 @@
 package Model;
 
+import Controller.LoginController;
+import Controller.MenuController;
 import View.LoginView;
+import View.MenuView;
 import java.sql.*;
 import javax.swing.JOptionPane;
 
@@ -10,6 +13,8 @@ public class LoginModel {
     Connection cc;
     Connection cn = Conexion();
     LoginView v = new View.LoginView();
+    public boolean bandera = true;
+    MenuView mv = new View.MenuView();
 
     /**
      * Este metodo permite la conexion con la base de datos
@@ -28,6 +33,17 @@ public class LoginModel {
     }
 
     /**
+     * Este metodo llama al metodo iniciar del controlador del menu y este
+     * muestra la interfaz de menu
+     */
+    public void MostrarMenu() {
+        MenuModel mm = new MenuModel();
+        MenuView mv = new MenuView();
+        MenuController c = new MenuController(mv, mm);
+        c.Iniciar();
+    }
+
+    /**
      * Este metodo permite registrar usuarios a la base de datos y limpiar los
      * campos una vez que se guardaron los datos en la bd
      */
@@ -43,12 +59,12 @@ public class LoginModel {
                 ppt.setString(1, v.txt_username.getText());
                 ppt.setString(2, v.txt_password.getText());
                 ppt.executeUpdate();
-                JOptionPane.showMessageDialog(null, "Insercion exitosa");
-                v.txt_username.setText("");
-                v.txt_password.setText("");
-
+                JOptionPane.showMessageDialog(null, "Cargado al sistema correctamente");
+                bandera = true;
+                MostrarMenu();
             }
         } catch (SQLException ex) {
+            bandera = false;
             System.out.println(ex);
             JOptionPane.showMessageDialog(null, "Insercion fallida");
 
@@ -87,17 +103,20 @@ public class LoginModel {
                 if (rs.next()) {
                     resultado = 1;
                     if (resultado == 1) {
-                        JOptionPane.showMessageDialog(null, "Bienvenido al Sistema " + usuario);
-                        v.txt_username.setText("");
-                        v.txt_password.setText("");
-                    } else {
-                        JOptionPane.showMessageDialog(null, "Usted no esta cargado en el sistema,registrese");
-                        v.txt_username.setText("");
-                        v.txt_password.setText("");
-                        BloquerBoton();
+                        JOptionPane.showMessageDialog(null, "Bienvenido al sistema " + usuario);
+                        bandera = true;
+                        MostrarMenu();
+
                     }
+                } else {
+                    bandera = false;
+                    JOptionPane.showMessageDialog(null, "Usted no esta cargado en el sistema,registrese");
+                    v.txt_username.setText("");
+                    v.txt_password.setText("");
+                    BloquerBoton();
                 }
             }
+
         } catch (Exception ex) {
             System.err.print(ex);
             JOptionPane.showMessageDialog(null, "No se puede ingresar al sistema");

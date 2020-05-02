@@ -30,8 +30,7 @@ public class LoginController implements ActionListener {
      * Este metodo permite mostrar la interfazAc Login
      */
     public void Iniciar() {
-        
-       
+
         v.setVisible(true);
 
     }
@@ -46,6 +45,9 @@ public class LoginController implements ActionListener {
         if (v.btn_registrar == e.getSource()) {
             try {
                 m.RegistrarUsuarios();
+                if(m.bandera==true){
+                    v.dispose();
+                }
             } catch (Exception ex) {
                 System.out.println(ex);
                 JOptionPane.showMessageDialog(null, "No se pudo cargar");
@@ -54,6 +56,10 @@ public class LoginController implements ActionListener {
         if (v.btn_login == e.getSource()) {
             try {
                 m.ValidarLogin();
+                if (m.bandera == true) {
+                    v.dispose();
+                }
+
             } catch (Exception ex) {
                 System.out.println(ex);
                 JOptionPane.showMessageDialog(null, "No se pudo ingresar al sistema");
