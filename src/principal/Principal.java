@@ -17,9 +17,9 @@ public class Principal {
 
         }
 
-        LoginModel m = new LoginModel();
-        LoginView v = new LoginView();
-        LoginController c = new LoginController(m, v);
-        c.Iniciar();
+        LoginModel loginModelo = new LoginModel();
+        LoginView loginVista = new LoginView();
+        LoginController controladorLogin = new LoginController(loginModelo, loginVista);
+        controladorLogin.Iniciar();
     }
 }

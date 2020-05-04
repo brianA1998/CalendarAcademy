@@ -10,54 +10,55 @@ import javax.swing.JOptionPane;
 public class LoginController implements ActionListener {
 
     //Declaracion de variables de tipo Modelo y Login
-    private LoginModel m;
-    private LoginView v;
+    private LoginModel loginModelo;
+    private LoginView loginVista;
 
     /**
      * Crea un login con los parametros especificados
      *
-     * @param m parametro de tipo modelo
-     * @param v parametro de tipo login
+     * @param loginModelo parametro de tipo modelo
+     * @param loginVista parametro de tipo login
      */
-    public LoginController(LoginModel m, LoginView v) {
-        this.m = m;
-        this.v = v;
-        this.v.btn_registrar.addActionListener(this);
-        this.v.btn_login.addActionListener(this);
+    public LoginController(LoginModel loginModelo, LoginView loginVista) {
+        this.loginModelo = loginModelo;
+        this.loginVista = loginVista;
+        this.loginVista.btn_registrar.addActionListener(this);
+        this.loginVista.btn_login.addActionListener(this);
     }
 
     /**
-     * Este metodo permite mostrar la interfazAc Login
+     * Este metodo permite mostrar la interfaz Login
      */
     public void Iniciar() {
 
-        v.setVisible(true);
+        loginVista.setVisible(true);
 
     }
 
     /**
-     * Captar los botones que se estan oprimiendo
+     * Captar los eventos que se estan realizando con los botones
      *
      * @param e evento capturado
      */
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (v.btn_registrar == e.getSource()) {
+
+        if (loginVista.btn_registrar == e.getSource()) {
             try {
-                m.RegistrarUsuarios();
-                if(m.bandera==true){
-                    v.dispose();
+                loginModelo.RegistrarUsuarios();
+                if (loginModelo.bandera == true) {
+                    loginVista.dispose();
                 }
             } catch (Exception ex) {
                 System.out.println(ex);
                 JOptionPane.showMessageDialog(null, "No se pudo cargar");
             }
         }
-        if (v.btn_login == e.getSource()) {
+        if (loginVista.btn_login == e.getSource()) {
             try {
-                m.ValidarLogin();
-                if (m.bandera == true) {
-                    v.dispose();
+                loginModelo.ValidarLogin();
+                if (loginModelo.bandera == true) {
+                    loginVista.dispose();
                 }
 
             } catch (Exception ex) {
@@ -65,6 +66,7 @@ public class LoginController implements ActionListener {
                 JOptionPane.showMessageDialog(null, "No se pudo ingresar al sistema");
             }
         }
+
     }
 
 }

@@ -5,17 +5,12 @@
  */
 package View;
 
-import java.awt.Image;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-
 /**
  *
  * @author GARBARINO
  */
 public class MenuView extends javax.swing.JFrame {
-    ImageIcon imagen;
-    Icon icono;
+
     /**
      * Creates new form MenuView
      */
@@ -23,11 +18,6 @@ public class MenuView extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(this);
 
-    }
-
-    @Override
-    public void repaint() {
-        super.repaint(); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
@@ -56,7 +46,7 @@ public class MenuView extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(178, 235, 242));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 5));
-        jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pnlMenu.setBackground(new java.awt.Color(0, 131, 143));
@@ -152,11 +142,6 @@ public class MenuView extends javax.swing.JFrame {
         btnMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnMenu.setOpaque(true);
         btnMenu.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/flecha_izquierda.png"))); // NOI18N
-        btnMenu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnMenuActionPerformed(evt);
-            }
-        });
         jPanel1.add(btnMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 50, 50));
 
         btnCerrar.setBackground(new java.awt.Color(255, 255, 255));
@@ -166,11 +151,6 @@ public class MenuView extends javax.swing.JFrame {
         btnCerrar.setBorder(null);
         btnCerrar.setContentAreaFilled(false);
         btnCerrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnCerrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCerrarActionPerformed(evt);
-            }
-        });
         jPanel1.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 0, -1, -1));
 
         jCalendar1.setBackground(new java.awt.Color(255, 255, 255));
@@ -197,29 +177,6 @@ public class MenuView extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_btnCerrarActionPerformed
-
-    private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
-        int posicion = btnMenu.getX();
-        if (posicion == 5) {
-            
-            imagen = new ImageIcon("src/img/flecha_derecha.png");
-            icono = new ImageIcon(imagen.getImage().getScaledInstance(btnMenu.getWidth(), btnMenu.getHeight(),Image.SCALE_DEFAULT));
-            
-            
-            
-            Animacion.Animacion.mover_derecha(5, 210, 2, 2, btnMenu);
-            Animacion.Animacion.mover_derecha(-200, 5, 2, 2, pnlMenu);
-
-        } else {
-            
-            Animacion.Animacion.mover_izquierda(211, 5, 2, 2, btnMenu);
-            Animacion.Animacion.mover_izquierda(5, -200, 2, 2, pnlMenu);
-        }
-    }//GEN-LAST:event_btnMenuActionPerformed
 
     /**
      * @param args the command line arguments
@@ -257,17 +214,17 @@ public class MenuView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCerrar;
-    private javax.swing.JButton btnMenu;
-    private javax.swing.JButton btn_agenda;
-    private javax.swing.JButton btn_asignatura;
-    private javax.swing.JButton btn_horario;
-    private javax.swing.JButton btn_progreso;
-    private com.toedter.calendar.JCalendar jCalendar1;
+    public static javax.swing.JButton btnCerrar;
+    public static javax.swing.JButton btnMenu;
+    public static javax.swing.JButton btn_agenda;
+    public static javax.swing.JButton btn_asignatura;
+    public static javax.swing.JButton btn_horario;
+    public static javax.swing.JButton btn_progreso;
+    public static com.toedter.calendar.JCalendar jCalendar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel label_libreta;
-    private javax.swing.JPanel pnlMenu;
+    public static javax.swing.JPanel pnlMenu;
     // End of variables declaration//GEN-END:variables
 
 }

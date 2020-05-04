@@ -14,7 +14,7 @@ import javax.swing.JFrame;
  * @author GARBARINO
  */
 public class LoginView extends javax.swing.JFrame {
-    
+
     /**
      * Creates new form LoginView
      */
@@ -25,17 +25,9 @@ public class LoginView extends javax.swing.JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
         setLocationRelativeTo(null);
-        
-     
-         
+
     }
 
-    /*@Override
-    public Image getIconImage() {
-        Image reValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("img/icono.png"));
-        return reValue;
-    }
-     */
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
