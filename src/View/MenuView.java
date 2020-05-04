@@ -5,18 +5,29 @@
  */
 package View;
 
+import java.awt.Image;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author GARBARINO
  */
 public class MenuView extends javax.swing.JFrame {
-
+    ImageIcon imagen;
+    Icon icono;
     /**
      * Creates new form MenuView
      */
     public MenuView() {
         initComponents();
         this.setLocationRelativeTo(this);
+
+    }
+
+    @Override
+    public void repaint() {
+        super.repaint(); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
@@ -35,6 +46,7 @@ public class MenuView extends javax.swing.JFrame {
         btn_asignatura = new javax.swing.JButton();
         btn_agenda = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
+        label_libreta = new javax.swing.JLabel();
         btnMenu = new javax.swing.JButton();
         btnCerrar = new javax.swing.JButton();
         jCalendar1 = new com.toedter.calendar.JCalendar();
@@ -42,56 +54,66 @@ public class MenuView extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(178, 235, 242));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 5));
+        jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        pnlMenu.setBackground(new java.awt.Color(255, 255, 255));
+        pnlMenu.setBackground(new java.awt.Color(0, 131, 143));
         pnlMenu.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        btn_horario.setBackground(new java.awt.Color(255, 255, 255));
+        btn_horario.setBackground(new java.awt.Color(0, 229, 255));
         btn_horario.setFont(new java.awt.Font("Source Sans Pro Semibold", 1, 18)); // NOI18N
         btn_horario.setText("Horario");
-        btn_horario.setBorder(null);
+        btn_horario.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 96, 100), 2));
         btn_horario.setContentAreaFilled(false);
         btn_horario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_horario.setOpaque(true);
 
-        btn_progreso.setBackground(new java.awt.Color(255, 255, 255));
+        btn_progreso.setBackground(new java.awt.Color(0, 229, 255));
         btn_progreso.setFont(new java.awt.Font("Source Sans Pro Semibold", 1, 18)); // NOI18N
         btn_progreso.setText("Progreso");
-        btn_progreso.setBorder(null);
+        btn_progreso.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 96, 100), 2));
         btn_progreso.setContentAreaFilled(false);
         btn_progreso.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_progreso.setOpaque(true);
 
-        btn_asignatura.setBackground(new java.awt.Color(255, 255, 255));
+        btn_asignatura.setBackground(new java.awt.Color(0, 229, 255));
         btn_asignatura.setFont(new java.awt.Font("Source Sans Pro Semibold", 1, 18)); // NOI18N
         btn_asignatura.setText("Asignatura");
-        btn_asignatura.setBorder(null);
+        btn_asignatura.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 96, 100), 2));
         btn_asignatura.setContentAreaFilled(false);
         btn_asignatura.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_asignatura.setOpaque(true);
 
-        btn_agenda.setBackground(new java.awt.Color(255, 255, 255));
+        btn_agenda.setBackground(new java.awt.Color(0, 229, 255));
         btn_agenda.setFont(new java.awt.Font("Source Sans Pro Semibold", 1, 18)); // NOI18N
         btn_agenda.setText("Agenda");
-        btn_agenda.setBorder(null);
+        btn_agenda.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 96, 100), 2));
         btn_agenda.setContentAreaFilled(false);
         btn_agenda.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_agenda.setOpaque(true);
 
-        jPanel2.setBackground(new java.awt.Color(0, 153, 255));
+        jPanel2.setBackground(new java.awt.Color(0, 184, 212));
         jPanel2.setForeground(new java.awt.Color(255, 255, 255));
+
+        label_libreta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/libreta_1.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(label_libreta)
+                .addContainerGap(21, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 128, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(label_libreta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(21, 21, 21))
         );
 
         javax.swing.GroupLayout pnlMenuLayout = new javax.swing.GroupLayout(pnlMenu);
@@ -100,11 +122,11 @@ public class MenuView extends javax.swing.JFrame {
             pnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlMenuLayout.createSequentialGroup()
                 .addGroup(pnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(btn_progreso, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
-                    .addComponent(btn_agenda, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_progreso, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btn_horario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btn_asignatura, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_agenda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlMenuLayout.setVerticalGroup(
@@ -119,73 +141,54 @@ public class MenuView extends javax.swing.JFrame {
                 .addComponent(btn_asignatura, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btn_progreso, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(73, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        btnMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/menu.png"))); // NOI18N
+        jPanel1.add(pnlMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(-200, 5, 200, -1));
+
+        btnMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/flecha_derecha.png"))); // NOI18N
         btnMenu.setBorder(null);
         btnMenu.setContentAreaFilled(false);
         btnMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnMenu.setOpaque(true);
+        btnMenu.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/flecha_izquierda.png"))); // NOI18N
         btnMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMenuActionPerformed(evt);
             }
         });
+        jPanel1.add(btnMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 50, 50));
 
-        btnCerrar.setBackground(new java.awt.Color(0, 102, 255));
+        btnCerrar.setBackground(new java.awt.Color(255, 255, 255));
         btnCerrar.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnCerrar.setForeground(new java.awt.Color(255, 255, 255));
-        btnCerrar.setText("X");
+        btnCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cerrar.png"))); // NOI18N
         btnCerrar.setBorder(null);
         btnCerrar.setContentAreaFilled(false);
         btnCerrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnCerrar.setOpaque(true);
         btnCerrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCerrarActionPerformed(evt);
             }
         });
+        jPanel1.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 0, -1, -1));
 
         jCalendar1.setBackground(new java.awt.Color(255, 255, 255));
-        jCalendar1.setDecorationBackgroundColor(new java.awt.Color(0, 153, 255));
+        jCalendar1.setDecorationBackgroundColor(new java.awt.Color(0, 151, 167));
         jCalendar1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jCalendar1.setMinSelectableDate(new java.util.Date(-62135755126000L));
         jCalendar1.setSundayForeground(new java.awt.Color(255, 255, 255));
         jCalendar1.setWeekOfYearVisible(false);
         jCalendar1.setWeekdayForeground(new java.awt.Color(255, 255, 255));
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(pnlMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(5, 5, 5)
-                .addComponent(btnMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jCalendar1, javax.swing.GroupLayout.PREFERRED_SIZE, 598, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
-                .addComponent(btnCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jCalendar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        jPanel1.add(jCalendar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(218, 5, 700, 508));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 974, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -201,12 +204,20 @@ public class MenuView extends javax.swing.JFrame {
 
     private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
         int posicion = btnMenu.getX();
-        if (posicion > 5) {
-            Animacion.Animacion.mover_izquierda(211, 5, 2, 2, btnMenu);
-            Animacion.Animacion.mover_izquierda(5, -200, 2, 2, pnlMenu);
-        } else {
+        if (posicion == 5) {
+            
+            imagen = new ImageIcon("src/img/flecha_derecha.png");
+            icono = new ImageIcon(imagen.getImage().getScaledInstance(btnMenu.getWidth(), btnMenu.getHeight(),Image.SCALE_DEFAULT));
+            
+            
+            
             Animacion.Animacion.mover_derecha(5, 210, 2, 2, btnMenu);
             Animacion.Animacion.mover_derecha(-200, 5, 2, 2, pnlMenu);
+
+        } else {
+            
+            Animacion.Animacion.mover_izquierda(211, 5, 2, 2, btnMenu);
+            Animacion.Animacion.mover_izquierda(5, -200, 2, 2, pnlMenu);
         }
     }//GEN-LAST:event_btnMenuActionPerformed
 
@@ -255,6 +266,8 @@ public class MenuView extends javax.swing.JFrame {
     private com.toedter.calendar.JCalendar jCalendar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel label_libreta;
     private javax.swing.JPanel pnlMenu;
     // End of variables declaration//GEN-END:variables
+
 }
