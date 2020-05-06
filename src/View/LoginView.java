@@ -8,12 +8,14 @@ package View;
 import java.awt.Image;
 import java.awt.Toolkit;
 import javax.swing.JFrame;
+import javax.swing.JTextField;
 
 /**
  *
  * @author GARBARINO
  */
 public class LoginView extends javax.swing.JFrame {
+    //String nombreusuario = txt_username.getText();
 
     /**
      * Creates new form LoginView
@@ -26,6 +28,23 @@ public class LoginView extends javax.swing.JFrame {
         setResizable(false);
         setLocationRelativeTo(null);
 
+    }
+
+    public static String getNombreUsuario() {
+
+        return txt_username.getText();
+    }
+
+    public static String getPasswordUsuario() {
+        return txt_password.getText();
+    }
+
+    public static void setNombreUsuario() {
+        txt_username.setText("");
+    }
+
+    public static void setPasswordUsuario() {
+        txt_password.setText("");
     }
 
     /**
@@ -162,7 +181,8 @@ public class LoginView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    public static javax.swing.JPasswordField txt_password;
-    public static javax.swing.JTextField txt_username;
+    private static javax.swing.JPasswordField txt_password;
+    private static javax.swing.JTextField txt_username;
     // End of variables declaration//GEN-END:variables
+
 }

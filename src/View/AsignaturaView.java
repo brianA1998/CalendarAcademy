@@ -5,6 +5,9 @@
  */
 package View;
 
+import static View.HomeView.btnMenu;
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author GARBARINO
@@ -16,6 +19,8 @@ public class AsignaturaView extends javax.swing.JFrame {
      */
     public AsignaturaView() {
         initComponents();
+        setLocationRelativeTo(null);
+        setResizable(false);
     }
 
     /**
@@ -27,21 +32,70 @@ public class AsignaturaView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        JPanel1 = new javax.swing.JPanel();
+        jPanel_ListaAsignaturas = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        btn_mostrarMenu = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        JPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        JPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 5));
+        JPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setText("holaaaaaaaa");
+
+        javax.swing.GroupLayout jPanel_ListaAsignaturasLayout = new javax.swing.GroupLayout(jPanel_ListaAsignaturas);
+        jPanel_ListaAsignaturas.setLayout(jPanel_ListaAsignaturasLayout);
+        jPanel_ListaAsignaturasLayout.setHorizontalGroup(
+            jPanel_ListaAsignaturasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel_ListaAsignaturasLayout.createSequentialGroup()
+                .addGap(77, 77, 77)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel_ListaAsignaturasLayout.setVerticalGroup(
+            jPanel_ListaAsignaturasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel_ListaAsignaturasLayout.createSequentialGroup()
+                .addGap(86, 86, 86)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(270, Short.MAX_VALUE))
+        );
+
+        JPanel1.add(jPanel_ListaAsignaturas, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 5, -260, 423));
+
+        btn_mostrarMenu.setText("Mostrar");
+        btn_mostrarMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_mostrarMenuActionPerformed(evt);
+            }
+        });
+        JPanel1.add(btn_mostrarMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 0, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(JPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(JPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_mostrarMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_mostrarMenuActionPerformed
+        int posicion = jPanel_ListaAsignaturas.getWidth();
+
+        if (posicion == -260) {
+            Animacion.Animacion.mover_derecha(-260, 260, 2, 2, jPanel_ListaAsignaturas);
+        } else {
+            Animacion.Animacion.mover_izquierda(260, -260, 2, 2, jPanel_ListaAsignaturas);
+        }
+
+    }//GEN-LAST:event_btn_mostrarMenuActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +133,9 @@ public class AsignaturaView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel JPanel1;
+    private javax.swing.JButton btn_mostrarMenu;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel_ListaAsignaturas;
     // End of variables declaration//GEN-END:variables
 }

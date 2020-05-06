@@ -1,9 +1,9 @@
 package Model;
 
 import Controller.LoginController;
-import Controller.MenuController;
+import Controller.HomeController;
 import View.LoginView;
-import View.MenuView;
+import View.HomeView;
 import java.sql.*;
 import javax.swing.JOptionPane;
 
@@ -13,6 +13,8 @@ public class LoginModel {
     Connection driverconnector;
     Connection conexion = Conectar();
     LoginView vista_login = new View.LoginView();
+    static final String CONTROLADOR = "com.mysql.jdbc.Driver";
+    static final String URL_BASEDATOS = "jdbc:mysql://localhost/bd_calendar";
     public boolean bandera = true;
 
     /**
@@ -22,8 +24,8 @@ public class LoginModel {
      */
     public Connection Conectar() {
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            driverconnector = DriverManager.getConnection("jdbc:mysql://localhost/bd_calendar", "root", "");
+            Class.forName(CONTROLADOR);
+            driverconnector = DriverManager.getConnection(URL_BASEDATOS, "root", "");
             System.out.println("Conexion exitosa");
         } catch (Exception e) {
             System.err.print(e);
@@ -38,15 +40,15 @@ public class LoginModel {
     public void RegistrarUsuarios() {
         //Realizando un Query a la base de datos
         try {
-            if (vista_login.txt_username.getText().equals("") || vista_login.txt_password.getText().equals("")) {
+            if (View.LoginView.getNombreUsuario().equals("") || View.LoginView.getPasswordUsuario().equals("")) {
                 JOptionPane.showMessageDialog(null, "Completar todos los campos");
             } else {
 
-                PreparedStatement insertarSQL = conexion.prepareStatement("INSERT INTO usuarios(user,password) VALUES (?,?)");
+                PreparedStatement insertarUsuario = conexion.prepareStatement("INSERT INTO usuarios(user,password) VALUES (?,?)");
 
-                insertarSQL.setString(1, vista_login.txt_username.getText());
-                insertarSQL.setString(2, vista_login.txt_password.getText());
-                insertarSQL.executeUpdate();
+                insertarUsuario.setString(1, vista_login.getNombreUsuario());
+                insertarUsuario.setString(2, vista_login.getPasswordUsuario());
+                insertarUsuario.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Cargado al sistema correctamente");
                 bandera = true;
                 MostrarMenu();
@@ -70,12 +72,12 @@ public class LoginModel {
 
         try {
 
-            if (vista_login.txt_username.getText().equals("") || vista_login.txt_password.getText().equals("")) {
+            if (View.LoginView.getNombreUsuario().equals("") || View.LoginView.getPasswordUsuario().equals("")) {
                 JOptionPane.showMessageDialog(null, "Completar todos los campos");
             } else {
 
-                String usuario = vista_login.txt_username.getText();
-                String password = vista_login.txt_password.getText();
+                String usuario = View.LoginView.getNombreUsuario();
+                String password = View.LoginView.getPasswordUsuario();
 
                 //Query
                 String sql = "SELECT * FROM usuarios where user ='" + usuario + "' and password='" + password + "'";
@@ -92,8 +94,8 @@ public class LoginModel {
                 } else {
                     bandera = false;
                     JOptionPane.showMessageDialog(null, "Usted no esta cargado en el sistema,registrese");
-                    vista_login.txt_username.setText("");
-                    vista_login.txt_password.setText("");
+                    vista_login.setNombreUsuario();
+                    vista_login.setPasswordUsuario();
                     vista_login.btn_login.setEnabled(false);
                 }
             }
@@ -109,10 +111,10 @@ public class LoginModel {
      * muestra la interfaz de menu
      */
     public void MostrarMenu() {
-        MenuModel menu_modelo = new MenuModel();
-        MenuView menu_vista = new MenuView();
-        MenuController menu_controlador = new MenuController(menu_vista, menu_modelo);
-        menu_controlador.Iniciar();
+        HomeModel Homemodelo = new HomeModel();
+        HomeView menu_vista = new HomeView();
+        HomeController menu_controlador = new HomeController(menu_vista, Homemodelo);
+        menu_controlador.IniciarMenu();
     }
 
 }
