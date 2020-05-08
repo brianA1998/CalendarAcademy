@@ -52,7 +52,7 @@ public class AsignaturaView extends javax.swing.JFrame {
             .addGroup(jPanel_ListaAsignaturasLayout.createSequentialGroup()
                 .addGap(77, 77, 77)
                 .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(121, Short.MAX_VALUE))
         );
         jPanel_ListaAsignaturasLayout.setVerticalGroup(
             jPanel_ListaAsignaturasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -62,7 +62,7 @@ public class AsignaturaView extends javax.swing.JFrame {
                 .addContainerGap(270, Short.MAX_VALUE))
         );
 
-        JPanel1.add(jPanel_ListaAsignaturas, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 5, -260, 423));
+        JPanel1.add(jPanel_ListaAsignaturas, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 5, 260, 423));
 
         btn_mostrarMenu.setText("Mostrar");
         btn_mostrarMenu.addActionListener(new java.awt.event.ActionListener() {
