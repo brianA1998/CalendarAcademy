@@ -6,7 +6,9 @@
 package View;
 
 import static View.HomeView.btnMenu;
+import java.awt.CardLayout;
 import java.awt.event.ActionListener;
+import javax.swing.JPanel;
 
 /**
  *
@@ -23,6 +25,7 @@ public class AsignaturaView extends javax.swing.JFrame {
         setResizable(false);
     }
 
+    //panelesAsignatura.setLayaout(new CardLayaout(0,0));
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -32,70 +35,321 @@ public class AsignaturaView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        JPanel1 = new javax.swing.JPanel();
-        jPanel_ListaAsignaturas = new javax.swing.JPanel();
+        jPanel_barraSuperior = new javax.swing.JPanel();
+        jLabel_titulo = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
+        jPanel_barraLateral = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        panelesAsignatura = new javax.swing.JPanel();
+        jPanel_AgregarAsignatura = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        btn_mostrarMenu = new javax.swing.JButton();
+        txtNombreAsignatura = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        txtNombreProfesor = new javax.swing.JTextField();
+        ComboBoxPeriodoDictado = new javax.swing.JComboBox<>();
+        ComboBoxCondicionPromocional = new javax.swing.JComboBox<>();
+        jButton6 = new javax.swing.JButton();
+        jPanel_MostrarAsignatura = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jPanel_EdtarAsignatura = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jPanel_EliminarAsignatura = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        JPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        JPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 5));
-        JPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel_barraSuperior.setBackground(new java.awt.Color(254, 251, 100));
+        jPanel_barraSuperior.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jLabel1.setText("holaaaaaaaa");
+        jLabel_titulo.setFont(new java.awt.Font("Trebuchet MS", 1, 28)); // NOI18N
+        jLabel_titulo.setText("ASIGNATURAS");
 
-        javax.swing.GroupLayout jPanel_ListaAsignaturasLayout = new javax.swing.GroupLayout(jPanel_ListaAsignaturas);
-        jPanel_ListaAsignaturas.setLayout(jPanel_ListaAsignaturasLayout);
-        jPanel_ListaAsignaturasLayout.setHorizontalGroup(
-            jPanel_ListaAsignaturasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel_ListaAsignaturasLayout.createSequentialGroup()
-                .addGap(77, 77, 77)
-                .addComponent(jLabel1)
-                .addContainerGap(121, Short.MAX_VALUE))
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/circle-cropped (2) (1).png"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel_barraSuperiorLayout = new javax.swing.GroupLayout(jPanel_barraSuperior);
+        jPanel_barraSuperior.setLayout(jPanel_barraSuperiorLayout);
+        jPanel_barraSuperiorLayout.setHorizontalGroup(
+            jPanel_barraSuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel_barraSuperiorLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(214, 214, 214)
+                .addComponent(jLabel_titulo)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel_ListaAsignaturasLayout.setVerticalGroup(
-            jPanel_ListaAsignaturasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel_ListaAsignaturasLayout.createSequentialGroup()
-                .addGap(86, 86, 86)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(270, Short.MAX_VALUE))
+        jPanel_barraSuperiorLayout.setVerticalGroup(
+            jPanel_barraSuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_barraSuperiorLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel_barraSuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton5)
+                    .addComponent(jLabel_titulo))
+                .addContainerGap())
         );
 
-        JPanel1.add(jPanel_ListaAsignaturas, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 5, 260, 423));
+        jPanel_barraLateral.setBackground(new java.awt.Color(246, 255, 190));
+        jPanel_barraLateral.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        btn_mostrarMenu.setText("Mostrar");
-        btn_mostrarMenu.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setBackground(new java.awt.Color(232, 61, 1));
+        jButton1.setText("MOSTRAR");
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_mostrarMenuActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
-        JPanel1.add(btn_mostrarMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 0, -1, -1));
+
+        jButton2.setBackground(new java.awt.Color(232, 141, 1));
+        jButton2.setText("AGREGAR");
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jButton3.setBackground(new java.awt.Color(232, 190, 1));
+        jButton3.setText("EDITAR");
+        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        jButton4.setBackground(new java.awt.Color(232, 229, 1));
+        jButton4.setText("ELIMINAR");
+        jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel_barraLateralLayout = new javax.swing.GroupLayout(jPanel_barraLateral);
+        jPanel_barraLateral.setLayout(jPanel_barraLateralLayout);
+        jPanel_barraLateralLayout.setHorizontalGroup(
+            jPanel_barraLateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
+            .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel_barraLateralLayout.setVerticalGroup(
+            jPanel_barraLateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel_barraLateralLayout.createSequentialGroup()
+                .addGap(114, 114, 114)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(109, Short.MAX_VALUE))
+        );
+
+        panelesAsignatura.setLayout(new java.awt.CardLayout());
+
+        jPanel_AgregarAsignatura.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        jLabel1.setText("Profesor");
+
+        txtNombreAsignatura.setBackground(new java.awt.Color(204, 204, 204));
+        txtNombreAsignatura.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 18)); // NOI18N
+        txtNombreAsignatura.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+
+        jLabel5.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        jLabel5.setText("Nombre");
+
+        jLabel6.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        jLabel6.setText("Periodo de Dictado");
+
+        jLabel7.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        jLabel7.setText("Condicion Promocional");
+
+        txtNombreProfesor.setBackground(new java.awt.Color(204, 204, 204));
+        txtNombreProfesor.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+
+        ComboBoxPeriodoDictado.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        ComboBoxPeriodoDictado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cuatrimestral", "Anual" }));
+
+        ComboBoxCondicionPromocional.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        ComboBoxCondicionPromocional.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Promocional", "No Promocional" }));
+
+        jButton6.setBackground(new java.awt.Color(249, 70, 70));
+        jButton6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButton6.setText("AÑADIR");
+
+        javax.swing.GroupLayout jPanel_AgregarAsignaturaLayout = new javax.swing.GroupLayout(jPanel_AgregarAsignatura);
+        jPanel_AgregarAsignatura.setLayout(jPanel_AgregarAsignaturaLayout);
+        jPanel_AgregarAsignaturaLayout.setHorizontalGroup(
+            jPanel_AgregarAsignaturaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel_AgregarAsignaturaLayout.createSequentialGroup()
+                .addGroup(jPanel_AgregarAsignaturaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel_AgregarAsignaturaLayout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addGroup(jPanel_AgregarAsignaturaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel_AgregarAsignaturaLayout.createSequentialGroup()
+                                .addGroup(jPanel_AgregarAsignaturaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel1))
+                                .addGap(45, 45, 45)
+                                .addGroup(jPanel_AgregarAsignaturaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtNombreProfesor)
+                                    .addComponent(txtNombreAsignatura)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_AgregarAsignaturaLayout.createSequentialGroup()
+                                .addGroup(jPanel_AgregarAsignaturaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel7))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                                .addGroup(jPanel_AgregarAsignaturaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(ComboBoxPeriodoDictado, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(ComboBoxCondicionPromocional, 0, 219, Short.MAX_VALUE)))))
+                    .addGroup(jPanel_AgregarAsignaturaLayout.createSequentialGroup()
+                        .addGap(235, 235, 235)
+                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(33, Short.MAX_VALUE))
+        );
+        jPanel_AgregarAsignaturaLayout.setVerticalGroup(
+            jPanel_AgregarAsignaturaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel_AgregarAsignaturaLayout.createSequentialGroup()
+                .addGap(60, 60, 60)
+                .addGroup(jPanel_AgregarAsignaturaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(txtNombreAsignatura, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(48, 48, 48)
+                .addGroup(jPanel_AgregarAsignaturaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(txtNombreProfesor, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(45, 45, 45)
+                .addGroup(jPanel_AgregarAsignaturaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6)
+                    .addComponent(ComboBoxPeriodoDictado, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(51, 51, 51)
+                .addGroup(jPanel_AgregarAsignaturaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(ComboBoxCondicionPromocional, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        panelesAsignatura.add(jPanel_AgregarAsignatura, "PanelAgregarAsignatura");
+
+        jLabel2.setText("MOSTRAR ASIGNATURA");
+
+        javax.swing.GroupLayout jPanel_MostrarAsignaturaLayout = new javax.swing.GroupLayout(jPanel_MostrarAsignatura);
+        jPanel_MostrarAsignatura.setLayout(jPanel_MostrarAsignaturaLayout);
+        jPanel_MostrarAsignaturaLayout.setHorizontalGroup(
+            jPanel_MostrarAsignaturaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel_MostrarAsignaturaLayout.createSequentialGroup()
+                .addGap(191, 191, 191)
+                .addComponent(jLabel2)
+                .addContainerGap(287, Short.MAX_VALUE))
+        );
+        jPanel_MostrarAsignaturaLayout.setVerticalGroup(
+            jPanel_MostrarAsignaturaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel_MostrarAsignaturaLayout.createSequentialGroup()
+                .addGap(82, 82, 82)
+                .addComponent(jLabel2)
+                .addContainerGap(328, Short.MAX_VALUE))
+        );
+
+        panelesAsignatura.add(jPanel_MostrarAsignatura, "PanelMostrarAsignatura");
+
+        jLabel3.setText("EDITAR ASIGNATURA");
+
+        javax.swing.GroupLayout jPanel_EdtarAsignaturaLayout = new javax.swing.GroupLayout(jPanel_EdtarAsignatura);
+        jPanel_EdtarAsignatura.setLayout(jPanel_EdtarAsignaturaLayout);
+        jPanel_EdtarAsignaturaLayout.setHorizontalGroup(
+            jPanel_EdtarAsignaturaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel_EdtarAsignaturaLayout.createSequentialGroup()
+                .addGap(183, 183, 183)
+                .addComponent(jLabel3)
+                .addContainerGap(307, Short.MAX_VALUE))
+        );
+        jPanel_EdtarAsignaturaLayout.setVerticalGroup(
+            jPanel_EdtarAsignaturaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel_EdtarAsignaturaLayout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addComponent(jLabel3)
+                .addContainerGap(367, Short.MAX_VALUE))
+        );
+
+        panelesAsignatura.add(jPanel_EdtarAsignatura, "PanelEditarAsignatura");
+
+        jLabel4.setText("ELIMINAR ASIGNATURA");
+
+        javax.swing.GroupLayout jPanel_EliminarAsignaturaLayout = new javax.swing.GroupLayout(jPanel_EliminarAsignatura);
+        jPanel_EliminarAsignatura.setLayout(jPanel_EliminarAsignaturaLayout);
+        jPanel_EliminarAsignaturaLayout.setHorizontalGroup(
+            jPanel_EliminarAsignaturaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel_EliminarAsignaturaLayout.createSequentialGroup()
+                .addGap(173, 173, 173)
+                .addComponent(jLabel4)
+                .addContainerGap(306, Short.MAX_VALUE))
+        );
+        jPanel_EliminarAsignaturaLayout.setVerticalGroup(
+            jPanel_EliminarAsignaturaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel_EliminarAsignaturaLayout.createSequentialGroup()
+                .addGap(62, 62, 62)
+                .addComponent(jLabel4)
+                .addContainerGap(348, Short.MAX_VALUE))
+        );
+
+        panelesAsignatura.add(jPanel_EliminarAsignatura, "PanelElliminarAsignatura");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(JPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel_barraSuperior, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel_barraLateral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(panelesAsignatura, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(JPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel_barraSuperior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(panelesAsignatura, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jPanel_barraLateral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_mostrarMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_mostrarMenuActionPerformed
-        int posicion = jPanel_ListaAsignaturas.getWidth();
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        CardLayout card = (CardLayout) panelesAsignatura.getLayout();
+        card.show(panelesAsignatura, "PanelMostrarAsignatura");
+    }//GEN-LAST:event_jButton1ActionPerformed
 
-        if (posicion == -260) {
-            Animacion.Animacion.mover_derecha(-260, 260, 2, 2, jPanel_ListaAsignaturas);
-        } else {
-            Animacion.Animacion.mover_izquierda(260, -260, 2, 2, jPanel_ListaAsignaturas);
-        }
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        CardLayout card = (CardLayout) panelesAsignatura.getLayout();
+        card.show(panelesAsignatura, "PanelAgregarAsignatura");
+    }//GEN-LAST:event_jButton2ActionPerformed
 
-    }//GEN-LAST:event_btn_mostrarMenuActionPerformed
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        CardLayout card = (CardLayout) panelesAsignatura.getLayout();
+        card.show(panelesAsignatura, "PanelEditarAsignatura");
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        CardLayout card = (CardLayout) panelesAsignatura.getLayout();
+        card.show(panelesAsignatura, "PanelElliminarAsignatura");
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -132,10 +386,34 @@ public class AsignaturaView extends javax.swing.JFrame {
         });
     }
 
+//jnuevaAsinagura  = new NuevaAsignatura();
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel JPanel1;
-    private javax.swing.JButton btn_mostrarMenu;
+    private javax.swing.JComboBox<String> ComboBoxCondicionPromocional;
+    private javax.swing.JComboBox<String> ComboBoxPeriodoDictado;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel_ListaAsignaturas;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel_titulo;
+    private javax.swing.JPanel jPanel_AgregarAsignatura;
+    private javax.swing.JPanel jPanel_EdtarAsignatura;
+    private javax.swing.JPanel jPanel_EliminarAsignatura;
+    private javax.swing.JPanel jPanel_MostrarAsignatura;
+    private javax.swing.JPanel jPanel_barraLateral;
+    private javax.swing.JPanel jPanel_barraSuperior;
+    public javax.swing.JPanel panelesAsignatura;
+    private javax.swing.JTextField txtNombreAsignatura;
+    private javax.swing.JTextField txtNombreProfesor;
     // End of variables declaration//GEN-END:variables
+
 }
