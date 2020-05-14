@@ -100,6 +100,7 @@ public class LoginView extends javax.swing.JFrame {
         btn_login.setForeground(new java.awt.Color(255, 255, 255));
         btn_login.setText("LOGIN");
         btn_login.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btn_login.setBorderPainted(false);
         btn_login.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel1.add(btn_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 500, 470, 40));
 
@@ -115,6 +116,7 @@ public class LoginView extends javax.swing.JFrame {
         btn_registrar.setForeground(new java.awt.Color(255, 255, 255));
         btn_registrar.setText("REGISTER");
         btn_registrar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btn_registrar.setBorderPainted(false);
         btn_registrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel1.add(btn_registrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 550, 470, 40));
 

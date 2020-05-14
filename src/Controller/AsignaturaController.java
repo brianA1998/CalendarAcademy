@@ -7,13 +7,12 @@ package Controller;
 
 import Model.AsignaturaModel;
 import View.AsignaturaView;
+import static View.AsignaturaView.panelesAsignatura;
+import java.awt.CardLayout;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-/**
- *
- * @author GARBARINO
- */
-public class AsignaturaController {
+public class AsignaturaController implements ActionListener {
 
     private AsignaturaModel asignaturaModelo;
     private AsignaturaView asignaturaVista;
@@ -21,17 +20,37 @@ public class AsignaturaController {
     public AsignaturaController(AsignaturaView asignatura_vista, AsignaturaModel asignatura_modelo) {
         this.asignaturaModelo = asignatura_modelo;
         this.asignaturaVista = asignatura_vista;
+        this.asignaturaVista.btnMostrar.addActionListener(this);
+        this.asignaturaVista.btnEditar.addActionListener(this);
+        this.asignaturaVista.btnAgregar.addActionListener(this);
+        this.asignaturaVista.btnEliminar.addActionListener(this);
     }
 
     /**
      * Este metodo permite mostrar la interfaz asignatura
      */
     public void Iniciar() {
-
         asignaturaVista.setVisible(true);
-       
     }
-    
-    
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (asignaturaVista.btnAgregar == e.getSource()) {
+            CardLayout card = (CardLayout) panelesAsignatura.getLayout();
+            card.show(panelesAsignatura, "PanelAgregarAsignatura");
+        }
+        if (asignaturaVista.btnMostrar == e.getSource()) {
+            CardLayout card = (CardLayout) panelesAsignatura.getLayout();
+            card.show(panelesAsignatura, "PanelMostrarAsignatura");
+        }
+        if (asignaturaVista.btnEditar == e.getSource()) {
+            CardLayout card = (CardLayout) panelesAsignatura.getLayout();
+            card.show(panelesAsignatura, "PanelEditarAsignatura");
+        }
+        if (asignaturaVista.btnEliminar == e.getSource()) {
+            CardLayout card = (CardLayout) panelesAsignatura.getLayout();
+            card.show(panelesAsignatura, "PanelElliminarAsignatura");
+        }
+    }
 
 }
