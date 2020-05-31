@@ -24,6 +24,9 @@ public class AsignaturaController implements ActionListener {
         this.asignaturaVista.btnEditar.addActionListener(this);
         this.asignaturaVista.btnAgregar.addActionListener(this);
         this.asignaturaVista.btnEliminar.addActionListener(this);
+        this.asignaturaVista.btnCargar.addActionListener(this);
+        this.asignaturaVista.btnBuscar.addActionListener(this);
+
     }
 
     /**
@@ -38,18 +41,30 @@ public class AsignaturaController implements ActionListener {
         if (asignaturaVista.btnAgregar == e.getSource()) {
             CardLayout card = (CardLayout) panelesAsignatura.getLayout();
             card.show(panelesAsignatura, "PanelAgregarAsignatura");
+
         }
         if (asignaturaVista.btnMostrar == e.getSource()) {
             CardLayout card = (CardLayout) panelesAsignatura.getLayout();
             card.show(panelesAsignatura, "PanelMostrarAsignatura");
+
         }
         if (asignaturaVista.btnEditar == e.getSource()) {
             CardLayout card = (CardLayout) panelesAsignatura.getLayout();
             card.show(panelesAsignatura, "PanelEditarAsignatura");
+
         }
         if (asignaturaVista.btnEliminar == e.getSource()) {
             CardLayout card = (CardLayout) panelesAsignatura.getLayout();
             card.show(panelesAsignatura, "PanelElliminarAsignatura");
+
+        }
+
+        if (asignaturaVista.btnCargar == e.getSource()) {
+            asignaturaModelo.InsertarAsignatura();
+        }
+        
+        if(asignaturaVista.btnBuscar == e.getSource()){
+            
         }
     }
 

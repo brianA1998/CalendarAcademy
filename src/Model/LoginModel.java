@@ -22,7 +22,7 @@ public class LoginModel {
      *
      * @return la conexion a la base de datos
      */
-    public Connection Conectar() {
+    public  Connection Conectar() {
         try {
             Class.forName(CONTROLADOR);
             driverconnector = DriverManager.getConnection(URL_BASEDATOS, "root", "");
