@@ -11,12 +11,15 @@ import static View.AsignaturaView.panelesAsignatura;
 import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class AsignaturaController implements ActionListener {
-
+    
     private AsignaturaModel asignaturaModelo;
     private AsignaturaView asignaturaVista;
-
+    
     public AsignaturaController(AsignaturaView asignatura_vista, AsignaturaModel asignatura_modelo) {
         this.asignaturaModelo = asignatura_modelo;
         this.asignaturaVista = asignatura_vista;
@@ -26,7 +29,8 @@ public class AsignaturaController implements ActionListener {
         this.asignaturaVista.btnEliminar.addActionListener(this);
         this.asignaturaVista.btnCargar.addActionListener(this);
         this.asignaturaVista.btnBuscar.addActionListener(this);
-
+        this.asignaturaVista.btnActualizarAsignatura.addActionListener(this);
+        
     }
 
     /**
@@ -35,37 +39,50 @@ public class AsignaturaController implements ActionListener {
     public void Iniciar() {
         asignaturaVista.setVisible(true);
     }
-
+    
     @Override
     public void actionPerformed(ActionEvent e) {
         if (asignaturaVista.btnAgregar == e.getSource()) {
             CardLayout card = (CardLayout) panelesAsignatura.getLayout();
             card.show(panelesAsignatura, "PanelAgregarAsignatura");
-
+            
         }
         if (asignaturaVista.btnMostrar == e.getSource()) {
             CardLayout card = (CardLayout) panelesAsignatura.getLayout();
             card.show(panelesAsignatura, "PanelMostrarAsignatura");
-
+            
         }
         if (asignaturaVista.btnEditar == e.getSource()) {
             CardLayout card = (CardLayout) panelesAsignatura.getLayout();
             card.show(panelesAsignatura, "PanelEditarAsignatura");
-
+            
         }
         if (asignaturaVista.btnEliminar == e.getSource()) {
             CardLayout card = (CardLayout) panelesAsignatura.getLayout();
             card.show(panelesAsignatura, "PanelElliminarAsignatura");
-
+            
         }
-
+        
         if (asignaturaVista.btnCargar == e.getSource()) {
             asignaturaModelo.InsertarAsignatura();
         }
         
-        if(asignaturaVista.btnBuscar == e.getSource()){
-            
+        if (asignaturaVista.btnBuscar == e.getSource()) {
+            try {
+                asignaturaModelo.ModificarAsignatura();
+                
+            } catch (SQLException ex) {
+                System.err.print(ex);
+            }
+        }
+        
+        if (asignaturaVista.btnActualizarAsignatura == e.getSource()) {
+            try {
+                asignaturaModelo.ActualizarDatosAsignatura(View.AsignaturaView.getTxtBuscar());
+            } catch (SQLException ex) {
+                System.err.print(ex);
+            }
         }
     }
-
+    
 }

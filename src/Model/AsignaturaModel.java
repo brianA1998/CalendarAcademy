@@ -16,7 +16,7 @@ public class AsignaturaModel {
     AsignaturaView VistaAsignatura = new View.AsignaturaView();
     static final String CONTROLADOR = "com.mysql.jdbc.Driver";
     static final String URL_BASEDATOS = "jdbc:mysql://localhost/bd_calendar";
-    // NombreAsignatura
+    String nombreAsignatura, nombreProfesor, periodoDictado, CondicionPromocional;
 
     /**
      * Este metodo permite la conexion con la base de datos
@@ -71,24 +71,60 @@ public class AsignaturaModel {
     }
 
     /**
-     * Permite modificar los datos y actualizarlos en la base de datos
+     * Permite cambiar los datos que se desean modificar en la base de datos
+     * sobre una asignatura especifica
      */
     public void ModificarAsignatura() throws SQLException {
 
         String asignaturaModificar = View.AsignaturaView.getTxtBuscar();
-        
-        
-        
-        
+
         PreparedStatement consultaTabla = conexion.prepareStatement("SELECT nombre_asignatura, nombre_profesor, condicion_promocional, periodo_dictado from asignatura where nombre_asignatura like ?");
-        consultaTabla.setString(1, asignaturaModificar);
+        consultaTabla.setString(1, "%" + asignaturaModificar + "%");
         ResultSet resulset = consultaTabla.executeQuery();
-        
-        while(resulset.next()){
+
+        //Obtenemos datos de base de datos
+        while (resulset.next()) {
+
+            nombreProfesor = resulset.getString("nombre_profesor");
+            nombreAsignatura = resulset.getString("nombre_asignatura");
+            periodoDictado = resulset.getString("periodo_dictado");
+            CondicionPromocional = resulset.getString("condicion_promocional");
+
+            View.AsignaturaView.setTxtEditarNombreAsignatura(nombreAsignatura);
+            View.AsignaturaView.setTxtEditarNombreProfesor(nombreProfesor);
+            View.AsignaturaView.setComboBoxCondicionPromocionalEditar(CondicionPromocional);
+            View.AsignaturaView.setComboBoxPeriodoDictadoEditar(periodoDictado);
+            View.AsignaturaView.EstadoEditableCampos();
+
             
         }
+
+    }
+
+    /**
+     * Permite actualizar la base de datos teniendo en cuenta los datos
+     * modificados
+     */
+    public void ActualizarDatosAsignatura(String asignaturaNombre) throws SQLException {
         
+        //Obtener datos de los campos 
+        String nombreAsignatura = View.AsignaturaView.getTxtEditarNombreAsignatura();
+        String nombreProfesor = View.AsignaturaView.getTxtEditarNombreProfesor();
+        String condicionPromocional = View.AsignaturaView.getComboBoxCondicionPromocionalEditar();
+        String periodoDictado = View.AsignaturaView.getComboBoxPeriodoDictadoEditar();
+
+        //Update de la tabla asignatura
+        PreparedStatement updateTabla = conexion.prepareStatement("UPDATE asignatura SET nombre_asignatura =?, nombre_profesor =?, periodo_dictado =?,condicion_promocional =? WHERE nombre_asignatura=?");
+        updateTabla.setString(1, nombreAsignatura);
+        updateTabla.setString(2, nombreProfesor);
+        updateTabla.setString(3, periodoDictado);
+        updateTabla.setString(4, condicionPromocional);
+        updateTabla.setString(5, asignaturaNombre);
+
+        updateTabla.executeUpdate();
         
+        System.err.print("datos actualizados correctamente");
+
     }
 
 }

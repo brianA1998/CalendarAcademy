@@ -25,8 +25,6 @@ public class AsignaturaView extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
     }
-    
-    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -64,7 +62,7 @@ public class AsignaturaView extends javax.swing.JFrame {
         txtEditarNombreProfesor = new javax.swing.JTextField();
         ComboBoxPeriodoDictadoEditar = new javax.swing.JComboBox<>();
         ComboBoxCondicionPromocionalEditar = new javax.swing.JComboBox<>();
-        jButton7 = new javax.swing.JButton();
+        btnActualizarAsignatura = new javax.swing.JButton();
         txtEditarBuscar = new javax.swing.JTextField();
         btnBuscar = new javax.swing.JButton();
         jPanel_EliminarAsignatura = new javax.swing.JPanel();
@@ -321,10 +319,12 @@ public class AsignaturaView extends javax.swing.JFrame {
         ComboBoxCondicionPromocionalEditar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Promocional", "No Promocional" }));
         ComboBoxCondicionPromocionalEditar.setEnabled(false);
 
-        jButton7.setBackground(new java.awt.Color(249, 70, 70));
-        jButton7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton7.setText("ACTUALIZAR");
-        jButton7.setBorderPainted(false);
+        btnActualizarAsignatura.setBackground(new java.awt.Color(249, 70, 70));
+        btnActualizarAsignatura.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnActualizarAsignatura.setText("ACTUALIZAR");
+        btnActualizarAsignatura.setBorderPainted(false);
+        btnActualizarAsignatura.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnActualizarAsignatura.setEnabled(false);
 
         txtEditarBuscar.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 18)); // NOI18N
 
@@ -337,7 +337,7 @@ public class AsignaturaView extends javax.swing.JFrame {
             jPanel_AgregarAsignatura1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_AgregarAsignatura1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton7)
+                .addComponent(btnActualizarAsignatura)
                 .addGap(223, 223, 223))
             .addGroup(jPanel_AgregarAsignatura1Layout.createSequentialGroup()
                 .addGroup(jPanel_AgregarAsignatura1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -391,7 +391,7 @@ public class AsignaturaView extends javax.swing.JFrame {
                     .addComponent(jLabel10)
                     .addComponent(ComboBoxCondicionPromocionalEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(48, 48, 48)
-                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnActualizarAsignatura, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -502,7 +502,7 @@ public class AsignaturaView extends javax.swing.JFrame {
                 .addComponent(jPanel_barraSuperior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(panelesAsignatura, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(panelesAsignatura, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jPanel_barraLateral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -553,6 +553,7 @@ public class AsignaturaView extends javax.swing.JFrame {
     private static javax.swing.JComboBox<String> ComboBoxCondicionPromocionalEditar;
     private static javax.swing.JComboBox<String> ComboBoxPeriodoDictado;
     private static javax.swing.JComboBox<String> ComboBoxPeriodoDictadoEditar;
+    public static javax.swing.JButton btnActualizarAsignatura;
     public javax.swing.JButton btnAgregar;
     public javax.swing.JButton btnBuscar;
     public javax.swing.JButton btnCargar;
@@ -560,7 +561,6 @@ public class AsignaturaView extends javax.swing.JFrame {
     public javax.swing.JButton btnEliminar;
     public javax.swing.JButton btnMostrar;
     private javax.swing.JButton jButton5;
-    public javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
@@ -596,8 +596,6 @@ public class AsignaturaView extends javax.swing.JFrame {
     public static String getTxtNombreAsignatura() {
         return txtNombreAsignatura.getText();
     }
-    
-    
 
     public static void setTxtNombreAsignatura() {
         txtNombreAsignatura.setText("");
@@ -615,7 +613,7 @@ public class AsignaturaView extends javax.swing.JFrame {
      * @return the ComboBoxCondicionPromocional
      */
     public static String getComboBoxCondicionPromocional() {
-        String CondicionPromocional = (String)ComboBoxCondicionPromocional.getSelectedItem();
+        String CondicionPromocional = (String) ComboBoxCondicionPromocional.getSelectedItem();
         return CondicionPromocional;
     }
 
@@ -631,7 +629,7 @@ public class AsignaturaView extends javax.swing.JFrame {
      * @return the ComboBoxCondicionPromocionalEditar
      */
     public static String getComboBoxCondicionPromocionalEditar() {
-        String CondicionPromocionalEditar = (String)ComboBoxCondicionPromocionalEditar.getSelectedItem();
+        String CondicionPromocionalEditar = (String) ComboBoxCondicionPromocionalEditar.getSelectedItem();
         return CondicionPromocionalEditar;
     }
 
@@ -639,15 +637,15 @@ public class AsignaturaView extends javax.swing.JFrame {
      * @param aComboBoxCondicionPromocionalEditar the
      * ComboBoxCondicionPromocionalEditar to set
      */
-    public static void setComboBoxCondicionPromocionalEditar(javax.swing.JComboBox<String> aComboBoxCondicionPromocionalEditar) {
-        ComboBoxCondicionPromocionalEditar = aComboBoxCondicionPromocionalEditar;
+    public static void setComboBoxCondicionPromocionalEditar(String CondicionPromocional) {
+        ComboBoxCondicionPromocionalEditar.setSelectedItem(CondicionPromocional);
     }
 
     /**
      * @return the ComboBoxPeriodoDictado
      */
     public static String getComboBoxPeriodoDictado() {
-        String PeriodoDictado = (String)ComboBoxPeriodoDictado.getSelectedItem();
+        String PeriodoDictado = (String) ComboBoxPeriodoDictado.getSelectedItem();
         return PeriodoDictado;
     }
 
@@ -662,7 +660,7 @@ public class AsignaturaView extends javax.swing.JFrame {
      * @return the ComboBoxPeriodoDictadoEditar
      */
     public static String getComboBoxPeriodoDictadoEditar() {
-        String PeriodoDictadoEditar = (String)ComboBoxPeriodoDictadoEditar.getSelectedItem();
+        String PeriodoDictadoEditar = (String) ComboBoxPeriodoDictadoEditar.getSelectedItem();
         return PeriodoDictadoEditar;
     }
 
@@ -670,29 +668,29 @@ public class AsignaturaView extends javax.swing.JFrame {
      * @param aComboBoxPeriodoDictadoEditar the ComboBoxPeriodoDictadoEditar to
      * set
      */
-    public static void setComboBoxPeriodoDictadoEditar(javax.swing.JComboBox<String> aComboBoxPeriodoDictadoEditar) {
-        ComboBoxPeriodoDictadoEditar = aComboBoxPeriodoDictadoEditar;
+    public static void setComboBoxPeriodoDictadoEditar(String periodoDictado) {
+        ComboBoxPeriodoDictadoEditar.setSelectedItem(periodoDictado);
     }
 
     /**
      * @return the txtBuscar
      */
-    public String getTxtBuscar() {
-        return txtEditarBuscar.getText();
+    public static String getTxtBuscar() {
+        return getTxtEditarBuscar().getText();
     }
 
     /**
      * @param txtBuscar the txtBuscar to set
      */
     public void setTxtBuscar(javax.swing.JTextField txtBuscar) {
-        this.txtEditarBuscar = txtBuscar;
+        this.setTxtEditarBuscar(txtBuscar);
     }
 
     /**
      * @return the txtBuscarNombreAsignatura
      */
     public static String getTxtBuscarNombreAsignatura() {
-        String BuscarNombreAsignatura = (String)txtBuscarNombreAsignatura.getText();
+        String BuscarNombreAsignatura = (String) txtBuscarNombreAsignatura.getText();
         return BuscarNombreAsignatura;
     }
 
@@ -707,34 +705,71 @@ public class AsignaturaView extends javax.swing.JFrame {
      * @return the txtEditarNombreAsignatura
      */
     public static String getTxtEditarNombreAsignatura() {
-        String EditarNombreAsignatura = (String)txtEditarNombreAsignatura.getText();
+        String EditarNombreAsignatura = (String) txtEditarNombreAsignatura.getText();
         return EditarNombreAsignatura;
     }
 
     /**
      * @param aTxtEditarNombreAsignatura the txtEditarNombreAsignatura to set
      */
-    public static void setTxtEditarNombreAsignatura(javax.swing.JTextField aTxtEditarNombreAsignatura) {
-        txtEditarNombreAsignatura = aTxtEditarNombreAsignatura;
+    public static void setTxtEditarNombreAsignatura(String nombreAsignatura) {
+        txtEditarNombreAsignatura.setText(nombreAsignatura);
     }
 
     /**
      * @return the txtEditarNombreProfesor
      */
     public static String getTxtEditarNombreProfesor() {
-        String EditarNombreProfesor = (String)txtEditarNombreProfesor.getText();
+        String EditarNombreProfesor = (String) txtEditarNombreProfesor.getText();
         return EditarNombreProfesor;
+
+    }
+
+    /**
+     * Este metodo permite cambiar el estado de campos de no editable a editable
+     */
+    public static void EstadoEditableCampos() {
+        txtEditarNombreAsignatura.setEnabled(true);
+        txtEditarNombreProfesor.setEnabled(true);
+        ComboBoxCondicionPromocionalEditar.setEnabled(true);
+        ComboBoxPeriodoDictadoEditar.setEnabled(true);
+        getBtnActualizarAsignatura().setEnabled(true);
     }
 
     /**
      * @param aTxtEditarNombreProfesor the txtEditarNombreProfesor to set
      */
-    public static void setTxtEditarNombreProfesor(javax.swing.JTextField aTxtEditarNombreProfesor) {
-        txtEditarNombreProfesor = aTxtEditarNombreProfesor;
+    public static void setTxtEditarNombreProfesor(String nombreProfesor) {
+        txtEditarNombreProfesor.setText(nombreProfesor);
     }
 
-    public void setText() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    /**
+     * @return the btnActualizarAsignatura
+     */
+    public static javax.swing.JButton getBtnActualizarAsignatura() {
+        return btnActualizarAsignatura;
+    }
+
+    /**
+     * @param aBtnActualizarAsignatura the btnActualizarAsignatura to set
+     */
+    public static void setBtnActualizarAsignatura(javax.swing.JButton aBtnActualizarAsignatura) {
+        btnActualizarAsignatura = aBtnActualizarAsignatura;
+    }
+
+    /**
+     * @return the txtEditarBuscar
+     */
+    public static javax.swing.JTextField getTxtEditarBuscar() {
+        
+        return txtEditarBuscar;
+    }
+
+    /**
+     * @param aTxtEditarBuscar the txtEditarBuscar to set
+     */
+    public static void setTxtEditarBuscar(javax.swing.JTextField aTxtEditarBuscar) {
+        txtEditarBuscar = aTxtEditarBuscar;
     }
 
 }
